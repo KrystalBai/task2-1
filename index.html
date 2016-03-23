@@ -22,6 +22,7 @@
          获取aqi-input输入的值，并显示在aqi-display中s
          */
 
+        /* 兼容旧版IE的事件监听器函数 */
         var addEvent=function(event, element, func) {
             if (element.addEventListener)  // W3C DOM
                 element.addEventListener(event, func);
@@ -32,7 +33,8 @@
                 element[event] = func;
             }
         }
-
+        
+        /* 点击事件绑定 */
         var btn=document.getElementById('button');
         var res=document.getElementById('aqi-display');
         addEvent('click',btn,function(){
